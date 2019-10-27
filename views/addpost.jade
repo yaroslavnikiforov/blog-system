@@ -11,12 +11,12 @@ block content
       label Title:
       input.form-control(name='title', type='text')
     .form-group
-      label Category
+      label Category:
       select.form-control(name='category')
         each category, i in categories
           option(value='#{category.name}') #{category.name}
     .form-group
-      label Body
+      label Body:
       textarea.form-control(name='body', id='body')
     .form-group
       label Main Image:
@@ -27,3 +27,6 @@ block content
         option(value='Majin Buu') Majin Buu
         option(value='Son Goku') Son Goku
     input.btn.btn-default(name='submit',type='submit',value='Save')
+    script(src='/ckeditor/ckeditor.js')
+    script
+      | CKEDITOR.replace('body')

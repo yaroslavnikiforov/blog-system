@@ -8,7 +8,7 @@ router.get("/add", function(req, res, next) {
   const categories = db.get("categories");
 
   categories.find({}, {}, function(err, categories) {
-    res.render("addpost", { title: "Add post", categories });
+    res.render("addpost", { title: "Add Post", categories });
   });
 });
 

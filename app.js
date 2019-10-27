@@ -8,6 +8,7 @@ const flash = require("connect-flash");
 const messages = require("express-messages");
 const indexRouter = require("./routes/index");
 const posts = require("./routes/posts");
+const categories = require("./routes/categories");
 const app = express();
 const mongo = require("mongodb");
 const db = require("monk")("localhost/nodeblog");
@@ -69,6 +70,7 @@ app.use(function(req, res, next) {
 
 app.use("/", indexRouter);
 app.use("/posts", posts);
+app.use("/categories", categories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
