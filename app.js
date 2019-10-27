@@ -4,7 +4,6 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
 const multer = require("multer");
-const moment = require("moment");
 const expressValidator = require("express-validator");
 const flash = require("connect-flash");
 const messages = require("express-messages");
@@ -13,8 +12,11 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
 const app = express();
+
 const db = require("monk")("localhost/nodeblog");
 const upload = multer({ dest: "./uploads" });
+
+app.locals.moment = require("moment");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
