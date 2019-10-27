@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
-const mongo = require("mongodb");
 const db = require("monk")("localhost/nodeblog");
 
 /* GET home page. */

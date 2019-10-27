@@ -3,18 +3,14 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
-const multer = require("multer");
 const expressValidator = require("express-validator");
 const flash = require("connect-flash");
 const messages = require("express-messages");
-
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-
+const posts = require("./routes/posts");
 const app = express();
-
+const mongo = require("mongodb");
 const db = require("monk")("localhost/nodeblog");
-const upload = multer({ dest: "./uploads" });
 
 app.locals.moment = require("moment");
 
@@ -72,7 +68,7 @@ app.use(function(req, res, next) {
 });
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/posts", posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
