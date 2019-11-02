@@ -5,7 +5,7 @@ block content
     each post, i in posts
       .post
         h1
-          a(href='/post/show/#{post._id}')
+          a(href='/posts/show/#{post._id}')
             =post.title
         p.meta Posted in&nbsp;
           a(href='/categories/show/#{post.category}') #{post.category}
