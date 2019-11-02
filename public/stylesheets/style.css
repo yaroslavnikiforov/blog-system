@@ -76,11 +76,20 @@ nav a:hover {
   text-decoration: none;
 }
 
+.post img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .meta {
   margin-bottom: 10px;
   padding: 7px;
   background: #ccc;
   border: 1px solid #ccc;
+}
+
+.meta a {
+  text-decoration: underline;
 }
 
 a.more {
@@ -123,4 +132,15 @@ select {
 textarea {
   height: 70px;
   width: 400px;
+}
+
+ul.success li {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  list-style: none;
 }

@@ -2,6 +2,15 @@ const express = require("express");
 const router = express.Router();
 const db = require("monk")("localhost/nodeblog");
 
+router.get("/show/:category", function(req, res, next) {
+  const posts = db.get("posts");
+  const category = req.params.category;
+
+  posts.find({ category }, {}, function(err, posts) {
+    res.render("index", { title: category, posts });
+  });
+});
+
 router.get("/add", function(req, res, next) {
   res.render("addcategory", { title: "Add Category" });
 });
